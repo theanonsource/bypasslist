@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonsource - About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            background-color: #007BFF; /* Ярко-синий фон */
+            color: #FFFFFF; /* Белый текст */
+            text-align: center;
+            border-top: 5px solid #0056b3;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+        }
+        footer nav {
+            margin-bottom: 10px;
+        }
+        footer nav a {
+            margin: 0 15px;
+            font-weight: bold;
+            color: #FFFFFF; /* Белый цвет для ссылок */
+            transition: color 0.3s;
+        }
+        footer nav a:hover {
+            color: #ffcc00; /* Цвет при наведении */
+        }
+        footer p {
+            margin: 5px 0;
+            color: #FFFFFF; /* текст футера белый */
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            color: #FFFFFF; /* Белый цвет для иконок */
+            font-size: 24px; /* Увеличенный размер иконок */
+            transition: transform 0.3s;
+        }
+        .social-icons a:hover {
+            transform: scale(1.2); /* Увеличение иконок при наведении */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Обход глобального межсетевого экрана цензуры</h1>
+  
+  <h2>Клиенты.</h2>
+    <p><b>NekoRay</b> - https://github.com/MatsuriDayo/nekoray/releases</p>
+<p>
+Подойдет для Linux и Windows, но есть отдельный софт и на Android. Инфрастурктура на ядре sing-box. Для стабильной работы обязательно включить TUN Mode.
+В настройках TUN Settings включить TUN Enable IPv6 (избавиться от утечки IPv6).
+</p>
+
+    <p><b>Hiddify</b> - https://github.com/hiddify/hiddify-app/releases</p>
+<p>
+Кроссплатформенный. Инфрастурктура на ядре xray. Настройка для правильного функционирования: режим - VPN, Enable TLS fragment - включить, реализация TUN - mixed.
+</p>
+
+    <p><b>v2rayNG</b> - https://github.com/2dust/v2rayNG/releases</p>
+<p>
+Поддерживает Android. Инфрастурктура на ядре v2ray/xray. Настройка для правильного функционирования: Настройки > Раздел Настройки фрагментирования > Использовать фрагментирование (tls-фрагментирование повышает сложность анализа трафика системой цензуры)
+</p>
+  
+  <h2>Доступные виртуальные сервера.</h2>
+<p>https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vless.txt - более 12 тысяч VLESS-конфигов от barry-far</p>
+
+  <h2>Руководство</h2>
+<p>
+  1. Собираете клиент (устанавливаете и настраиваете описанным образом, <i>см. Клиенты</i>)
+  2. Скопируйте указанную ссылку на VLESS конфиги (<i>см. Доступные виртуальные сервера</i>) и вставьте скопированную ссылку в клиент, чтобы импортировать сервера.
+   <small><b>Для v2rayNG:</b> + > "Импорт из буфера обмена".</small>
+   <small><b>Для v2rayNG:</b> Server > Add profile from clipboard.</small>
+   <small><b>Для Hiddify:</b> + > "Добавить из буфера обмена".</small>
+  3. Отсортируйте полученные сервера по задержке через имеющийся функционал клиента.
+   <small><b>Для v2rayNG:</b>  "Время отклика профилей группы" (следует подождать десяток минут, зависит от мощности обработки устройством и количества серверов) > "Сортировка по результатам теста".</small>
+   <small><b>Для v2rayNG:</b> Server > Current Group > Url Test (ждите). Потом отсортируйте по вкладке Test Results.</small>
+   <small><b>Для Hiddify:</b> Он сортирует в реальном времени, кстати тем самым неплохо нагружает систему.</small>
+  4. Проверьте функциональность сервера через веб-ресурсы - https://browserleaks.com/dns, https://2ip.io/privacy
+</p>
+
+<p>
+  Серьезно и безотлагательно отнеситесь к проверке конфига, который хотите использовать. Обследуйте свою виртуальную сеть, проинспектируйте SSL traffic через ресурс https://www.doileak.com/classic.html. Если замечены проблемы с SSL рекомендуется сменить сервер.
+  Поскольку VLESS протокол не шифруемый напрямую, трафик может течь через TLS. Таким образом, наличие TLS даёт показатель безопасности. В противном случае, если конфиг не имеет TLS показателя, стоит усомниться в защищенности соединения. Из этого следует: если есть необходимость в безопасном соединении, проверяйте конфиги серверов на наличие TLS, такие сервера более безопасные.
+  Рекомендуется периодически обновлять лист серверов ("группу профилей" или "подписку группы" и т.п.), ибо сервера могут истекать сроком действия или быть неактуальными с течением времени.
+  Если сервер активен - это еще не означает, что он функционирует в текущих условиях сети, где система цензуры постоянно анализирует трафик. Проверяйте IP через браузер.
+  <small>TLS - протокол, используемый поверх в протоколе VLESS для улучшения безопасности и конфиденциальности соединений.</small>
+  <small>SSL-трафик в контексте VPN относится к использованию протокола SSL (Secure Sockets Layer) для шифрования данных, передаваемых через виртуальную частную сеть. Это обеспечивает безопасность и конфиденциальность данных, передаваемых между клиентом и сервером.</small>
+</p>
+  
+  <p style="text-align: center;"><small>Указанные ресурсы являются общедоступными и разрешены для размещения. Мы не несем ответственности за безопасность вышеуказанных ресурсов
+    и не предоставляем никаких гарантий в этом отношении. В случае возникновения несоответствий, ответственность за использование указанных ресурсов ложится исключительно на вас.
+  Кроме того, вы подтверждаете, что ознакомлены с возможными правовыми последствиями, которые могут возникнуть в вашем регионе.</small></p>
+
+  
+    <footer>
+        <nav>
+            <a href="index.html">На главную</a>
+        </nav>
+        <p>&copy; 2025 Anonsource.</p>
+        <div class="social-icons">
+            <a href="https://discord.gg/UEXvSbVCQM" target="_blank" title="Discord">
+                <i class="fab fa-discord"></i> <!-- Иконка Discord -->
+            </a>
+            <a href="https://github.com/theanonsource" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i> <!-- Иконка GitHub -->
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
