@@ -75,6 +75,23 @@
         .social-icons a:hover {
             transform: scale(1.2); /* Увеличение иконок при наведении */
         }
+        
+nav {
+        display: flex;
+        gap: 10px; /* Расстояние между кнопками */
+    }
+    .button {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #007BFF; /* Цвет фона */
+        color: white; /* Цвет текста */
+        text-decoration: none; /* Убираем подчеркивание */
+        border-radius: 5px; /* Закругленные углы */
+        transition: background-color 0.3s; /* Плавный переход цвета */
+    }
+    .button:hover {
+        background-color: #0056b3; /* Цвет фона при наведении */
+    }
     </style>
 </head>
 
@@ -93,7 +110,10 @@
 <i>Meshtastic использует легковесные устройства на базе LoRa (Long Range), которые могут передавать данные на большие расстояния. Meshtastic создает децентрализованную сеть, где каждое устройство может передавать сообщения другим устройствам в пределах радиуса действия.</i>
 </p>
 
-<p><a href="https://meshtastic.org/">Веб-ресурс Meshtastic</a>  <a href="https://f-droid.org/en/packages/com.geeksville.mesh/">Доступен на F-Droid</a></p>
+<nav>
+    <a href="https://meshtastic.org/" class="button">Веб-ресурс Meshtastic</a>
+    <a href="https://f-droid.org/en/packages/com.geeksville.mesh/" class="button">Доступен на F-Droid</a>
+</nav>
 
 <p><small>
 <b>Meshtastic</b> — проект, который предоставляет возможность создания сетей для обмена сообщениями с использованием радиосигналов. Он ориентирован на обеспечение зашифрованной и децентрализованной связи на больших расстояниях без зависимости от мобильных сетей.
