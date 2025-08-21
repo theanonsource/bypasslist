@@ -130,7 +130,40 @@
     <div id="suggestions"></div>
 </div>
 
+<script>
+    const topics = {
+        "Обобщаем о MAX": "log1.html",
+        "Кладезь полезных программ на Android": "log2.html"
+    };
 
+    const searchInput = document.getElementById('search-input');
+    const suggestionsContainer = document.getElementById('suggestions');
+
+    searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase();
+        suggestionsContainer.innerHTML = '';
+
+        if (query) {
+            const filteredTopics = Object.keys(topics).filter(topic => topic.toLowerCase().includes(query));
+            filteredTopics.forEach(topic => {
+                const suggestionDiv = document.createElement('div');
+                suggestionDiv.classList.add('suggestion');
+                suggestionDiv.textContent = topic;
+                suggestionDiv.addEventListener('click', function() {
+                    const selectedUrl = topics[topic]; // Получаем URL для выбранной темы
+                    window.location.href = selectedUrl; // Перенаправляем на соответствующую страницу
+                });
+                suggestionsContainer.appendChild(suggestionDiv);
+            });
+        }
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!searchInput.contains(event.target)) {
+            suggestionsContainer.innerHTML = '';
+        }
+    });
+</script>
   
     <footer>
         <nav>
