@@ -1,6 +1,6 @@
 # Project Bypasslist
 
-![Логотип](https://github.com/theanonsource/bypasslist/blob/457249223819d6fbea8bf6d94329943d9ee10b7f/runetbypass.jpg)
+<img src="https://github.com/theanonsource/bypasslist/blob/457249223819d6fbea8bf6d94329943d9ee10b7f/runetbypass.jpg" alt="Логотип" width="200"/>
 
 ## Наша Миссия
 
@@ -14,4 +14,4 @@
 
 ## Контакты и Поддержка
 
-Если у вас есть вопросы или предложения, вы можете связаться со мной в Discord: [Discord Anonsource](https://discord.gg/UEXvSbVCQM).
+Если у вас есть вопросы или предложения, вы можете связаться с нами в Discord: [Discord Anonsource](https://discord.gg/UEXvSbVCQM).
