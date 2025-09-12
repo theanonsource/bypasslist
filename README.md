@@ -14,4 +14,4 @@
 
 ## Контакты и Поддержка
 
-Если у вас есть вопросы или предложения, вы можете связаться с нами в Discord: [Discord Anonsource](https://discord.gg/UEXvSbVCQM).
+Если у вас есть вопросы или предложения, вы можете связаться и получить помощь в сообществе Discord: [Discord Backrooms](https://discord.gg/UEXvSbVCQM).
