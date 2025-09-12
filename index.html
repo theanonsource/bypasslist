@@ -91,23 +91,63 @@
          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для глубины */
          background-color: #f9f9f9; /* Цвет фона */
         }  
-         .discord-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            margin: 20px 0 20px auto;               /* справа */
-            background: linear-gradient(45deg, #7289da, #5865f2);
-            color: #fff;
-            font-size: 1rem;
-            font-weight: 600;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-            transition: transform 0.2s, box-shadow 0.2s;
+         
+       .discord-btn {
+         position: relative;
+         display: inline-flex;
+         align-items: center;
+         gap:10px;
+         padding: 12px 24px;
+         margin: 20px 0 20px auto;
+         background: linear-gradient(45deg, #7289da, #5865f2);
+         color: #fff;
+         font-size: 1rem;
+         font-weight: 600;
+         text-align: center;
+         text-decoration: none;
+         border-radius: 8px;
+         box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+         transition: transform 0.2s, box-shadow 0.2s;
+         overflow: hidden;
         }
-        .discord-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+      .discord-btn .btn-icon { display:inline-flex; align-items:center; gap:8px; }
+
+/* Обычный текст видим, подсказка скрыта */
+      .discord-btn .btn-text {
+         display: inline-block;
+         transform: translateY(0);
+         opacity: 1;
+         transition: transform .18s ease, opacity .18s ease;
+         white-space: nowrap;
+        }
+
+/* Текст при наведении — изначально скрыт и сдвинут вверх */
+       .discord-btn .btn-hover {
+         position: absolute;
+         left: 50%;
+         top: 50%;
+         transform: translate(-50%, 12px);
+         opacity: 0;
+         pointer-events: none;
+         transition: transform .18s ease, opacity .18s ease;
+         white-space: nowrap;
+        }
+
+/* Внешний hover эффект кнопки */
+      .discord-btn:hover {
+         transform: translateY(-2px);
+         box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+        }
+
+/* При наведении — скрываем основной текст и показываем подсказку */
+      .discord-btn:hover .btn-text {
+         transform: translateY(-8px);
+         opacity: 0;
+        }
+
+      .discord-btn:hover .btn-hover {
+         transform: translate(-50%, -50%);
+         opacity: 1;
         }
     </style>
 </head>
@@ -116,7 +156,9 @@
     <h1>Реестр обходов</h1>
 
 <a href="https://discord.gg/UEXvSbVCQM" class="discord-btn" target="_blank" rel="noopener">
-    <i class="fab fa-discord"></i> Присоединяйся к нам в Discord
+  <span class="btn-icon"><i class="fab fa-discord" aria-hidden="true"></i></span>
+  <span class="btn-text">Присоединяйся к нам в Discord</span>
+  <span class="btn-hover">Поддержи проект</span>
 </a>
     
     <article>
