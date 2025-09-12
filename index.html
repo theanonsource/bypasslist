@@ -90,12 +90,34 @@
          margin: 20px; /* Внешние отступы */
          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для глубины */
          background-color: #f9f9f9; /* Цвет фона */
-}
+        }  
+         .discord-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 20px auto;               /* центрировать по горизонтали */
+            background: linear-gradient(45deg, #7289da, #5865f2);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .discord-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+        }
     </style>
 </head>
 
 <body>
     <h1>Реестр обходов</h1>
+
+<a href="https://discord.gg/UEXvSbVCQM" class="discord-btn" target="_blank" rel="noopener">
+    Присоединяйся к нам в Discord
+</a>
     
     <article>
         <h2><a href="info1.html">Обход глобального межсетевого экрана цензуры</a></h2>
