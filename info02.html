@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bypasslist - 1 - advanced</title>
+
+<link rel="icon" href="https://raw.githubusercontent.com/theanonsource/bypasslist/refs/heads/main/runetbypass.jpg" type="image/jpeg"> 
+    
+<!-- Open Graph метатеги -->
+    <meta property="og:title" content="Обход глобального межсетевого экрана цензуры + дополнительная обфускация трафика (Android)" />
+    <meta property="og:description" content="Методика обхода цензуры ТСПУ и фильтров DPI с использованием VPN в связке с обфускатором." />
+    <meta property="og:image" content="https://raw.githubusercontent.com/theanonsource/bypasslist/refs/heads/main/runetbypass.jpg" />
+    <meta property="og:url" content="https://theanonsource.github.io/bypasslist/info02.html" />
+    <meta property="og:type" content="website" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            background-color: #007BFF; /* Ярко-синий фон */
+            color: #FFFFFF; /* Белый текст */
+            text-align: center;
+            border-top: 5px solid #0056b3;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+        }
+        footer nav {
+            margin-bottom: 10px;
+        }
+        footer nav a {
+            margin: 0 15px;
+            font-weight: bold;
+            color: #FFFFFF; /* Белый цвет для ссылок */
+            transition: color 0.3s;
+        }
+        footer nav a:hover {
+            color: #ffcc00; /* Цвет при наведении */
+        }
+        footer p {
+            margin: 5px 0;
+            color: #FFFFFF; /* текст футера белый */
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            color: #FFFFFF; /* Белый цвет для иконок */
+            font-size: 24px; /* Увеличенный размер иконок */
+            transition: transform 0.3s;
+        }
+        .social-icons a:hover {
+            transform: scale(1.2); /* Увеличение иконок при наведении */
+        }
+        
+        .divider {
+            width: 100%;
+            height: 2px;
+            background-color: #ccc; /* Цвет разделителя */
+            margin: 20px 0; /* Отступы сверху и снизу */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Обход глобального межсетевого экрана цензуры + дополнительная обфускация трафика (Android)</h1>
+    
+  <p><b><small>Методика обхода цензуры ТСПУ и фильтров DPI с использованием VPN в связке с обфускатором.</b></small></b></p>
+
+<p style="text-align: right;"><small>Опубликовано / Последнее изменение: 17.10.25</small></p>
+    
+<div class="divider"></div> <!-- Разделитель -->
+
+<p>
+Обфускация — маскировка трафика для осложнения выявлений сигнатур фильтрами, позволяющая без  туннелирования через сторонние VPN-серверы обходить некоторые блокировки.
+</p>
+<p>
+В связке с методикой обхода глобального межсетевого экрана ТСПУ, обфускация может помочь в некоторых случаях, когда возникают серьёзные проблемы в соединении с VPN-сервером из-за тщательного анализа трафика цензурой.
+</p>
+<p>
+Клиенты v2rayNG и NekoRay (Android), которые мы далее для этого рассмотрим, позволяют добавить новые маршруты в маршрутизацию трафика VPN.
+</p>
+<p>
+Прежде всего, для дальнейшего понимания, вам необходимо ознакомиться со статьей <a href="https://theanonsource.github.io/bypasslist/info7.html">"Обход DPI через локальную обфускацию"</a>. Чтобы заставить работать обфускатор ByeByeDPI в связке с VPN клиентами, нужно сперва включить режим Прокси (Настройки > Режим "Прокси"). После чего активировать утилиту и следовать указаниям ниже.
+<br>
+Для внедрения прокси в маршрутизацию трафика VPN-клиента нужно:
+</p>
+
+<h2>v2rayNG</h2>
+
+<p>
+Маршрутизация > Кнопка + > IP: 127.0.0.1 > Port: 1080 > Исходящее подключение: proxy. Название можно указать любое, к примеру, obf-addon.
+Функция "VPN обходит LAN" в разделе Настройки VPN должна иметь значение "Обходит". 
+</p>
+
+<h2>NekoRay Android</h2>
+
+<p>
+Маршруты > Кнопка добавления справа вверху > dst ip: 127.0.0.1 > dst port: 1080 > outbound: прокси. Название любое.
+Функция "Обход LAN" в разделе Настройки маршрута должна быть включена.
+</p>
+
+<p><small>
+На данный момент методичка для Android-based клеинтов, позже возможно добавлю и для десктопа.
+</small></p>
+  
+<div class="divider"></div> <!-- Разделитель -->
+    
+  <p style="text-align: center;"><small><i>Указанные ресурсы являются общедоступными и разрешены для размещения. Мы не несем ответственности за безопасность вышеуказанных ресурсов
+    и не предоставляем никаких гарантий в этом отношении. В случае возникновения несоответствий, ответственность за использование указанных ресурсов ложится исключительно на вас.
+  Кроме того, вы подтверждаете, что ознакомлены с возможными правовыми последствиями, которые могут возникнуть в вашем регионе.</i></small></p>
+
+  
+    <footer>
+        <nav>
+            <a href="about.html">О нас</a>
+            <a href="index.html">Реестр обходов</a>
+        </nav>
+        <p>&copy; 2025 Anonsource.</p>
+        <div class="social-icons">
+            <a href="https://discord.gg/UEXvSbVCQM" target="_blank" title="Discord">
+                <i class="fab fa-discord"></i> <!-- Иконка Discord -->
+            </a>
+            <a href="https://github.com/theanonsource" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i> <!-- Иконка GitHub -->
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
