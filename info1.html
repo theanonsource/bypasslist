@@ -116,6 +116,13 @@
 Для Android: Настройки > Входящие настройки > Добавить HTTP-прокси к VPN (на Android 10+ могут возникать проблемы с соединением, данная функция эту проблему решает).
 </p>
 
+  <p><b>Throne</b> - <a href="https://github.com/throneproj/Throne/releases" target="_blank" title="Throne">Throne Github releases</a></p>
+<p>
+Поддержка Windows, Linux, MacOS. Последователь NekoRay, инфраструктура ядра sing-box. Улучшенная и продолжаемая версия клеинта NekoRay.
+<br>
+Настройка: Включить TUN Mode; Tun Settings > Stack: mixed, MTU: 9000, Tun Enable IPv6. В Basic Settings можно указать иной Latancy Test URL, если возникают проблемы с доступом к стандартному сервису. Routing Settings > DNS > Remote DNS: какой-нибудь dns-query url, например, https://dns.quad9.net/dns-query, в случае, если возникают траблы с DNS; Direct DNS: localhost. Tun Settings > Strict Route позволяет мониторить соединения в Connections.
+</p>
+    
     <p><b>Hiddify</b> - <a href="https://github.com/hiddify/hiddify-app/releases" target="_blank" title="Hiddify">Hiddify Github releases</a> • <a href="https://github.com/hiddify/hiddify-next/releases/download/v2.0.5/Hiddify-iOS.ipa" target="_blank" title="Hiddify IOS">Hiddify Github IOS version</a></p>
 <p>
 Кроссплатформенный. Инфраструктура на ядре xray. Настройка для правильного функционирования: режим - VPN, Enable TLS fragment - включить, реализация TUN - mixed.
@@ -142,6 +149,8 @@
   <br>
   <small><b>Для NekoRay Android:</b> нажмите ⋮ > в правом верхнем углу кнопка добавить > тип группы "Подписка" > сортировка "По задержке" > ссылка для подписки (<i>см. Доступные виртуальные сервера</i>). После чего создать группу через кнопку справа вверху и дождаться добавления конфигов.</small>
   <br>
+  <small><b>Для Throne:</b> выберите Profiles > Add profile from clipboard.</small>
+  <br>
   <small><b>Для Hiddify:</b> нажмите + > "Добавить из буфера обмена".</small>
   <br>
   3. Отсортируйте полученные сервера по задержке с помощью функционала клиента.
@@ -151,6 +160,8 @@
   <small><b>Для NekoRay:</b> выберите Server > Current Group > Url Test (ждите). Затем отсортируйте по вкладке Test Results.</small>
   <br>
   <small><b>Для NekoRay Android:</b> нажмите ⋮ > URL Тест (дождитесь окончания) > Сортировка > По задержке.</small>
+  <br>
+  <small><b>Для Throne:</b> два варианта - Ctrl+A > ПКМ > URL Test Selected; ПКМ по группе, где находятся профили VLESS-конфигов, например, Default > URL Test Group.</small>
   <br>
   <small><b>Для Hiddify:</b> сортировка происходит в реальном времени, что может нагрузить систему.</small>
   <br>
