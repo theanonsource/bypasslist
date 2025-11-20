@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bypasslist - 1 - whitelist</title>
+
+<link rel="icon" href="https://raw.githubusercontent.com/theanonsource/bypasslist/refs/heads/main/runetbypass.jpg" type="image/jpeg"> 
+    
+<!-- Open Graph метатеги -->
+    <meta property="og:title" content="Обход глобального межсетевого экрана цензуры на базе whitelist-фильтрации" />
+    <meta property="og:description" content="Методика обхода белого списка и фильтров ТСПУ." />
+    <meta property="og:image" content="https://raw.githubusercontent.com/theanonsource/bypasslist/refs/heads/main/runetbypass.jpg" />
+    <meta property="og:url" content="https://theanonsource.github.io/bypasslist/info04.html" />
+    <meta property="og:type" content="website" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            background-color: #007BFF; /* Ярко-синий фон */
+            color: #FFFFFF; /* Белый текст */
+            text-align: center;
+            border-top: 5px solid #0056b3;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+        }
+        footer nav {
+            margin-bottom: 10px;
+        }
+        footer nav a {
+            margin: 0 15px;
+            font-weight: bold;
+            color: #FFFFFF; /* Белый цвет для ссылок */
+            transition: color 0.3s;
+        }
+        footer nav a:hover {
+            color: #ffcc00; /* Цвет при наведении */
+        }
+        footer p {
+            margin: 5px 0;
+            color: #FFFFFF; /* текст футера белый */
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            color: #FFFFFF; /* Белый цвет для иконок */
+            font-size: 24px; /* Увеличенный размер иконок */
+            transition: transform 0.3s;
+        }
+        .social-icons a:hover {
+            transform: scale(1.2); /* Увеличение иконок при наведении */
+        }
+        
+        .divider {
+            width: 100%;
+            height: 2px;
+            background-color: #ccc; /* Цвет разделителя */
+            margin: 20px 0; /* Отступы сверху и снизу */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Обход глобального межсетевого экрана цензуры на базе whitelist-фильтрации</h1>
+    
+  <p><b><small>Методика обхода белого списка и фильтров ТСПУ.</b></small></b></p>
+
+<p style="text-align: right;"><small>Опубликовано / Последнее изменение: 20.11.25</small></p>
+    
+<div class="divider"></div> <!-- Разделитель -->
+
+<h2>Обход белого списка 2-ух фильтровой модели (DNS filter, 'White' IP filter)</h2>
+  
+<p>
+Транспорт VLESS: WebSocket + TLS
+<br>
+WS Host/Узел: <code>cdn.filterai.ru</code> (или ваш ru cdn)
+<br>
+Путь к WS: <code>/websocketpl</code> (для cdn.filterai.ru)
+<br>
+SNI: <code>uslugi.yandex.ru, sport.mail.ru, service.amigo.mail.ru, otveti.mail.ru, tile3.maps.2gis.com, webstore.mail.ru, vkvd560.okcdn.ru, mp.rzd.ru</code> и подобные рунет домены
+<br>
+Кодирование пакетов: XUDP (если поддерживается)
+<br>
+В настройках TLS отключить проверку сертификата (нужно, чтобы спуфить sni сертификат на cdn)
+<br>
+Remote DNS: <code>77.88.8.8</code>
+  <small><b>Для NekoRay Android:</b> Настройки > Настройки DNS > Удаленный DNS</small>
+  <small><b>Для Throne:</b> Settings > Routing Settings > DNS > Remote DNS</small>
+<br>
+URL-тест подключения и задержки: <code>https://api.browser.yandex.ru/generate_204</code>
+  <small><b>Для NekoRay Android:</b> Настройки > Прочие настройки > URL-адрес проверки подключения</small>
+  <small><b>Для Throne:</b> Settings > Basic Settings > Latency Test URL</small>
+</p>
+  
+<div class="divider"></div> <!-- Разделитель -->
+    
+  <p style="text-align: center;"><small><i>Указанные ресурсы являются общедоступными и разрешены для размещения. Мы не несем ответственности за безопасность вышеуказанных ресурсов
+    и не предоставляем никаких гарантий в этом отношении. В случае возникновения несоответствий, ответственность за использование указанных ресурсов ложится исключительно на вас.
+  Кроме того, вы подтверждаете, что ознакомлены с возможными правовыми последствиями, которые могут возникнуть в вашем регионе.</i></small></p>
+
+  
+    <footer>
+        <nav>
+            <a href="about.html">О нас</a>
+            <a href="index.html">Реестр обходов</a>
+        </nav>
+        <p>&copy; 2025 Anonsource.</p>
+        <div class="social-icons">
+            <a href="https://discord.gg/FyrjgZ2Skj" target="_blank" title="Discord">
+                <i class="fab fa-discord"></i> <!-- Иконка Discord -->
+            </a>
+            <a href="https://github.com/theanonsource" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i> <!-- Иконка GitHub -->
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
